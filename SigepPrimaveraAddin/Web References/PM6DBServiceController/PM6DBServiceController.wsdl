@@ -1,0 +1,821 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://projectobjects.com/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://projectobjects.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://projectobjects.com/">
+      <s:element name="UpdateProject">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idPM6" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="source" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateProjectResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateProjectResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateProjectAssociation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idPM6" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="sigepID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateProjectAssociationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateProjectAssociationResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImportProject">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IdSigep" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImportProjectResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ImportProjectResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteAllIntegrationAPIUsession">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="appname" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteAllIntegrationAPIUsessionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteAllIntegrationAPIUsessionResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DisplayStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idPM6" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DisplayStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DisplayStatusResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReplacePM6StartProject">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idPM6" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReplacePM6StartProjectResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ReplacePM6StartProjectResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAssociateProject">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idSigep" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAssociateProjectResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetAssociateProjectResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPM6AssociateProject">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idPM" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPM6AssociateProjectResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetPM6AssociateProjectResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPM6AssociateProjectExceptCurrentProject">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idPM" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPM6AssociateProjectExceptCurrentProjectResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetPM6AssociateProjectExceptCurrentProjectResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSigepProjectInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idSigep" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSigepProjectInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSigepProjectInfoResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSigepProjectStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idPM" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSigepProjectStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetSigepProjectStatusResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserPrimaveraPwd">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserPrimaveraPwdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserPrimaveraPwdResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProjStatusList">
+        <s:complexType />
+      </s:element>
+      <s:element name="ProjStatusListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ProjStatusListResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProjLocationsList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="companyId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProjLocationsListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ProjLocationsListResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDefaultP6calendarList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetDefaultP6calendarListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDefaultP6calendarListResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProjCustomers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="companyId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProjCustomersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ProjCustomersResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Projects">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="companyId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="descr" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="status" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="location" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="cust" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProjectsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ProjectsResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProjectSanpshots">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="projectID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProjectSanpshotsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ProjectSanpshotsResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CompanyList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CompanyListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CompanyListResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="UpdateProjectSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateProject" />
+  </wsdl:message>
+  <wsdl:message name="UpdateProjectSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateProjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateProjectAssociationSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateProjectAssociation" />
+  </wsdl:message>
+  <wsdl:message name="UpdateProjectAssociationSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateProjectAssociationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ImportProjectSoapIn">
+    <wsdl:part name="parameters" element="tns:ImportProject" />
+  </wsdl:message>
+  <wsdl:message name="ImportProjectSoapOut">
+    <wsdl:part name="parameters" element="tns:ImportProjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteAllIntegrationAPIUsessionSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteAllIntegrationAPIUsession" />
+  </wsdl:message>
+  <wsdl:message name="DeleteAllIntegrationAPIUsessionSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteAllIntegrationAPIUsessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="DisplayStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:DisplayStatus" />
+  </wsdl:message>
+  <wsdl:message name="DisplayStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:DisplayStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReplacePM6StartProjectSoapIn">
+    <wsdl:part name="parameters" element="tns:ReplacePM6StartProject" />
+  </wsdl:message>
+  <wsdl:message name="ReplacePM6StartProjectSoapOut">
+    <wsdl:part name="parameters" element="tns:ReplacePM6StartProjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAssociateProjectSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAssociateProject" />
+  </wsdl:message>
+  <wsdl:message name="GetAssociateProjectSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAssociateProjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPM6AssociateProjectSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPM6AssociateProject" />
+  </wsdl:message>
+  <wsdl:message name="GetPM6AssociateProjectSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPM6AssociateProjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPM6AssociateProjectExceptCurrentProjectSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPM6AssociateProjectExceptCurrentProject" />
+  </wsdl:message>
+  <wsdl:message name="GetPM6AssociateProjectExceptCurrentProjectSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPM6AssociateProjectExceptCurrentProjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSigepProjectInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSigepProjectInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetSigepProjectInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSigepProjectInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSigepProjectStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSigepProjectStatus" />
+  </wsdl:message>
+  <wsdl:message name="GetSigepProjectStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSigepProjectStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserPrimaveraPwdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserPrimaveraPwd" />
+  </wsdl:message>
+  <wsdl:message name="GetUserPrimaveraPwdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserPrimaveraPwdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProjStatusListSoapIn">
+    <wsdl:part name="parameters" element="tns:ProjStatusList" />
+  </wsdl:message>
+  <wsdl:message name="ProjStatusListSoapOut">
+    <wsdl:part name="parameters" element="tns:ProjStatusListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProjLocationsListSoapIn">
+    <wsdl:part name="parameters" element="tns:ProjLocationsList" />
+  </wsdl:message>
+  <wsdl:message name="ProjLocationsListSoapOut">
+    <wsdl:part name="parameters" element="tns:ProjLocationsListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDefaultP6calendarListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDefaultP6calendarList" />
+  </wsdl:message>
+  <wsdl:message name="GetDefaultP6calendarListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDefaultP6calendarListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProjCustomersSoapIn">
+    <wsdl:part name="parameters" element="tns:ProjCustomers" />
+  </wsdl:message>
+  <wsdl:message name="ProjCustomersSoapOut">
+    <wsdl:part name="parameters" element="tns:ProjCustomersResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProjectsSoapIn">
+    <wsdl:part name="parameters" element="tns:Projects" />
+  </wsdl:message>
+  <wsdl:message name="ProjectsSoapOut">
+    <wsdl:part name="parameters" element="tns:ProjectsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProjectSanpshotsSoapIn">
+    <wsdl:part name="parameters" element="tns:ProjectSanpshots" />
+  </wsdl:message>
+  <wsdl:message name="ProjectSanpshotsSoapOut">
+    <wsdl:part name="parameters" element="tns:ProjectSanpshotsResponse" />
+  </wsdl:message>
+  <wsdl:message name="CompanyListSoapIn">
+    <wsdl:part name="parameters" element="tns:CompanyList" />
+  </wsdl:message>
+  <wsdl:message name="CompanyListSoapOut">
+    <wsdl:part name="parameters" element="tns:CompanyListResponse" />
+  </wsdl:message>
+  <wsdl:portType name="PM6DBServiceControllerSoap">
+    <wsdl:operation name="UpdateProject">
+      <wsdl:input message="tns:UpdateProjectSoapIn" />
+      <wsdl:output message="tns:UpdateProjectSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProjectAssociation">
+      <wsdl:input message="tns:UpdateProjectAssociationSoapIn" />
+      <wsdl:output message="tns:UpdateProjectAssociationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportProject">
+      <wsdl:input message="tns:ImportProjectSoapIn" />
+      <wsdl:output message="tns:ImportProjectSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAllIntegrationAPIUsession">
+      <wsdl:input message="tns:DeleteAllIntegrationAPIUsessionSoapIn" />
+      <wsdl:output message="tns:DeleteAllIntegrationAPIUsessionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DisplayStatus">
+      <wsdl:input message="tns:DisplayStatusSoapIn" />
+      <wsdl:output message="tns:DisplayStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReplacePM6StartProject">
+      <wsdl:input message="tns:ReplacePM6StartProjectSoapIn" />
+      <wsdl:output message="tns:ReplacePM6StartProjectSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAssociateProject">
+      <wsdl:input message="tns:GetAssociateProjectSoapIn" />
+      <wsdl:output message="tns:GetAssociateProjectSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPM6AssociateProject">
+      <wsdl:input message="tns:GetPM6AssociateProjectSoapIn" />
+      <wsdl:output message="tns:GetPM6AssociateProjectSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPM6AssociateProjectExceptCurrentProject">
+      <wsdl:input message="tns:GetPM6AssociateProjectExceptCurrentProjectSoapIn" />
+      <wsdl:output message="tns:GetPM6AssociateProjectExceptCurrentProjectSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSigepProjectInfo">
+      <wsdl:input message="tns:GetSigepProjectInfoSoapIn" />
+      <wsdl:output message="tns:GetSigepProjectInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSigepProjectStatus">
+      <wsdl:input message="tns:GetSigepProjectStatusSoapIn" />
+      <wsdl:output message="tns:GetSigepProjectStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserPrimaveraPwd">
+      <wsdl:input message="tns:GetUserPrimaveraPwdSoapIn" />
+      <wsdl:output message="tns:GetUserPrimaveraPwdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProjStatusList">
+      <wsdl:input message="tns:ProjStatusListSoapIn" />
+      <wsdl:output message="tns:ProjStatusListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProjLocationsList">
+      <wsdl:input message="tns:ProjLocationsListSoapIn" />
+      <wsdl:output message="tns:ProjLocationsListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDefaultP6calendarList">
+      <wsdl:input message="tns:GetDefaultP6calendarListSoapIn" />
+      <wsdl:output message="tns:GetDefaultP6calendarListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProjCustomers">
+      <wsdl:input message="tns:ProjCustomersSoapIn" />
+      <wsdl:output message="tns:ProjCustomersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Projects">
+      <wsdl:input message="tns:ProjectsSoapIn" />
+      <wsdl:output message="tns:ProjectsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProjectSanpshots">
+      <wsdl:input message="tns:ProjectSanpshotsSoapIn" />
+      <wsdl:output message="tns:ProjectSanpshotsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CompanyList">
+      <wsdl:input message="tns:CompanyListSoapIn" />
+      <wsdl:output message="tns:CompanyListSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PM6DBServiceControllerSoap" type="tns:PM6DBServiceControllerSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UpdateProject">
+      <soap:operation soapAction="http://projectobjects.com/UpdateProject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProjectAssociation">
+      <soap:operation soapAction="http://projectobjects.com/UpdateProjectAssociation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportProject">
+      <soap:operation soapAction="http://projectobjects.com/ImportProject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAllIntegrationAPIUsession">
+      <soap:operation soapAction="http://projectobjects.com/DeleteAllIntegrationAPIUsession" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisplayStatus">
+      <soap:operation soapAction="http://projectobjects.com/DisplayStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReplacePM6StartProject">
+      <soap:operation soapAction="http://projectobjects.com/ReplacePM6StartProject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAssociateProject">
+      <soap:operation soapAction="http://projectobjects.com/GetAssociateProject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPM6AssociateProject">
+      <soap:operation soapAction="http://projectobjects.com/GetPM6AssociateProject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPM6AssociateProjectExceptCurrentProject">
+      <soap:operation soapAction="http://projectobjects.com/GetPM6AssociateProjectExceptCurrentProject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSigepProjectInfo">
+      <soap:operation soapAction="http://projectobjects.com/GetSigepProjectInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSigepProjectStatus">
+      <soap:operation soapAction="http://projectobjects.com/GetSigepProjectStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserPrimaveraPwd">
+      <soap:operation soapAction="http://projectobjects.com/GetUserPrimaveraPwd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProjStatusList">
+      <soap:operation soapAction="http://projectobjects.com/ProjStatusList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProjLocationsList">
+      <soap:operation soapAction="http://projectobjects.com/ProjLocationsList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDefaultP6calendarList">
+      <soap:operation soapAction="http://projectobjects.com/GetDefaultP6calendarList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProjCustomers">
+      <soap:operation soapAction="http://projectobjects.com/ProjCustomers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Projects">
+      <soap:operation soapAction="http://projectobjects.com/Projects" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProjectSanpshots">
+      <soap:operation soapAction="http://projectobjects.com/ProjectSanpshots" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CompanyList">
+      <soap:operation soapAction="http://projectobjects.com/CompanyList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="PM6DBServiceControllerSoap12" type="tns:PM6DBServiceControllerSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UpdateProject">
+      <soap12:operation soapAction="http://projectobjects.com/UpdateProject" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProjectAssociation">
+      <soap12:operation soapAction="http://projectobjects.com/UpdateProjectAssociation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportProject">
+      <soap12:operation soapAction="http://projectobjects.com/ImportProject" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAllIntegrationAPIUsession">
+      <soap12:operation soapAction="http://projectobjects.com/DeleteAllIntegrationAPIUsession" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisplayStatus">
+      <soap12:operation soapAction="http://projectobjects.com/DisplayStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReplacePM6StartProject">
+      <soap12:operation soapAction="http://projectobjects.com/ReplacePM6StartProject" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAssociateProject">
+      <soap12:operation soapAction="http://projectobjects.com/GetAssociateProject" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPM6AssociateProject">
+      <soap12:operation soapAction="http://projectobjects.com/GetPM6AssociateProject" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPM6AssociateProjectExceptCurrentProject">
+      <soap12:operation soapAction="http://projectobjects.com/GetPM6AssociateProjectExceptCurrentProject" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSigepProjectInfo">
+      <soap12:operation soapAction="http://projectobjects.com/GetSigepProjectInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSigepProjectStatus">
+      <soap12:operation soapAction="http://projectobjects.com/GetSigepProjectStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserPrimaveraPwd">
+      <soap12:operation soapAction="http://projectobjects.com/GetUserPrimaveraPwd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProjStatusList">
+      <soap12:operation soapAction="http://projectobjects.com/ProjStatusList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProjLocationsList">
+      <soap12:operation soapAction="http://projectobjects.com/ProjLocationsList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDefaultP6calendarList">
+      <soap12:operation soapAction="http://projectobjects.com/GetDefaultP6calendarList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProjCustomers">
+      <soap12:operation soapAction="http://projectobjects.com/ProjCustomers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Projects">
+      <soap12:operation soapAction="http://projectobjects.com/Projects" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProjectSanpshots">
+      <soap12:operation soapAction="http://projectobjects.com/ProjectSanpshots" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CompanyList">
+      <soap12:operation soapAction="http://projectobjects.com/CompanyList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PM6DBServiceController">
+    <wsdl:port name="PM6DBServiceControllerSoap" binding="tns:PM6DBServiceControllerSoap">
+      <soap:address location="http://localhost:3159/PM6DBServiceController.asmx" />
+    </wsdl:port>
+    <wsdl:port name="PM6DBServiceControllerSoap12" binding="tns:PM6DBServiceControllerSoap12">
+      <soap12:address location="http://localhost:3159/PM6DBServiceController.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

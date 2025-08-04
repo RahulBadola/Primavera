@@ -1,0 +1,5 @@
+1. For ENI environment, compile with VS2005
+2. Registry path to show "Publish to SIGEP" item in Primavera menu to be verified
+3. Check "SendKeys.vbs" file to write the correct PM6 client path in it
+4. Build the "INTERNAL_PLUGINS.xml" and "BREBootStrap.xml" files with the utility "dbconfig.cmd" (to be found in the "Java" folder of the Primavera client installation) and put the two xml files in the working directory of SIGEPPrimavera.exe
+5. Register SIGEPPrimavera.exe with regasm using the ".bat" files

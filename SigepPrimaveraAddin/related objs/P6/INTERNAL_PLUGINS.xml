@@ -1,0 +1,678 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><MyPrimavera desc="SET_MYPRIMAVERA" version="15.200">
+    
+
+    <Localization desc="SET_LOCALIZATION">
+        <SystemLanguage desc="SET_LOCALIZATION_SYSTEMLANGUAGE" type="java.lang.String">en</SystemLanguage>
+        <SystemCountry desc="SET_LOCALIZATION_SYSTEMCOUNTRY" type="java.lang.String">US</SystemCountry>
+    </Localization>
+
+    <Authentication desc="SET_AUTHENTICATION">
+        <Mode desc="SET_AUTHENTICATION_MODE" o1="NATIVE" o2="WebSSO" o3="LDAP" type="javax.swing.JComboBox">NATIVE</Mode>
+        <WebSSO desc="SET_WEBSSO">
+            <UserNameHeaderKey desc="SET_WEBSSO_USERNAMEHEADERKEY" type="java.lang.String">OAM_REMOTE_USER</UserNameHeaderKey>
+            <ContextPathOverride desc="SET_WEBSSO_CONTEXTPATHOVERRIDE" type="java.lang.String">/p6</ContextPathOverride>
+            <AllowAlternateLoginAttribute desc="SET_WEBSSO_ALLOWALTERNATELOGINATTRIBUTE" type="java.lang.Boolean">false</AllowAlternateLoginAttribute>
+            <SSOHeaderKey desc="SET_WEBSSO_SSOHEADERKEY" type="java.lang.String">Osso-User-Guid</SSOHeaderKey>
+            <LDAPSearchAttribute desc="SET_WEBSSO_LDAPSEARCHATTRIBUTE" type="java.lang.String">orclguid</LDAPSearchAttribute>
+        </WebSSO>
+        <LDAP desc="SET_LDAP">
+            <SSLCertificateStore desc="SET_LDAP_SSLCERTIFICATESTORE" type="java.lang.String"/>
+            <SSLStorePassword desc="SET_LDAP_SSLSTOREPASSWORD" encrypt="true" type="java.lang.String"/>
+        </LDAP>
+        <SSL desc="SET_SSL">
+            <SSLLoginKey desc="SET_SSL_LOGIN" type="java.lang.Boolean">false</SSLLoginKey>
+            <SSLPortKey desc="SET_SSL_PORT" max="65535" min="1" type="java.lang.Integer">443</SSLPortKey>
+        </SSL>
+    </Authentication>
+
+    <SessionManagement desc="SET_SESSIONMANAGEMENT">
+        <MaximumSessionTimeout desc="SET_SM_MAXTIMEOUT" max="2073600000" min="60000" type="com.primavera.common.value.Duration">86400000</MaximumSessionTimeout>
+    </SessionManagement>
+
+    <Database desc="SET_DATABASE">
+        <Instance desc="SET_DATABASE_INSTANCE" id="1">
+            <Name desc="SET_DATABASE_NAME" key="y" length="32" type="java.lang.String"/>
+            <Description desc="SET_DATABASE_DESCRIPTION" length="128" type="java.lang.String"/>
+            <Driver desc="SET_DATABASE_DRIVER">
+               <Class desc="SET_DATABASE_DRIVER_CLASS" type="java.lang.String">oracle.jdbc.OracleDriver</Class>
+               <URL desc="SET_DATABASE_URL" type="java.lang.String"/>
+               <ISORACLE hidden="y" type="java.lang.Boolean">true</ISORACLE>
+               <ISDEFAULTDRIVER hidden="y" type="java.lang.Boolean">true</ISDEFAULTDRIVER>
+            </Driver>
+            <PublicGroupId desc="SET_PUBLIC_GROUP_ID" type="java.lang.Integer">1</PublicGroupId>
+            <UserName desc="SET_DATABASE_USERNAME" type="java.lang.String"/>
+            <Password desc="SET_DATABASE_PASSWORD" encrypt="true" pw="y" type="java.lang.String">AE041BA227F7604549F20F4DCC752F5D0B3E1B6B2DCCEA16C13BC6AE6C7750D2C76CAE04</Password>
+            <UserSecurity desc="SET_DATABASE_USERSECURITY">
+                <LogLoginAttempts desc="SET_DATABASE_LOG_LOGIN_ATTEMPTS" o1="None" o2="Failed Attempts" o3="Successful Attempts" o4="All" type="javax.swing.JComboBox">All</LogLoginAttempts>
+                <LoginLockoutCount desc="SET_DATABASE_LOCKIN_LOCKOUT_COUNT" max="100000" min="0" type="java.lang.Integer">0</LoginLockoutCount>
+                <LoginLockoutDuration desc="SET_DATABASE_LOCKIN_LOCKOUT_DURATION" max="2073600000" min="0" type="com.primavera.common.value.Duration">0</LoginLockoutDuration>
+                <AllowMultiSessionUser desc="SET_DATABASE_ALLOW_MULTIUSER_SESSION" o1="No" o2="Single Machine" o3="Yes" type="javax.swing.JComboBox">Yes</AllowMultiSessionUser>
+            </UserSecurity>
+            <AutoStart desc="SET_DATABASE_AUTOSTART" type="java.lang.Boolean">true</AutoStart>
+            <ConnectionPool desc="SET_STANDARD_CONNECTION_POOL" id="PMR">
+                <ConnectionPoolResizeRate desc="SET_CONNECTION_POOL_CONNECTIONPOOLRESIZERATE" max="43200000" min="240000" type="com.primavera.common.value.Duration">240000</ConnectionPoolResizeRate>
+                <MaintenanceFrequency desc="SET_CONNECTION_POOL_MAINTENANCE_FREQUENCY" max="3600000" min="10000" type="com.primavera.common.value.Duration">60000</MaintenanceFrequency>
+                <LeaseRequestWaitTimeout desc="SET_CONNECTION_POOL_LEASEREQUESTWAITTIMEOUT" max="7200000" min="5000" type="com.primavera.common.value.Duration">30000</LeaseRequestWaitTimeout>
+                <MaxConnections desc="SET_CONNECTION_POOL_MAXCONNECTIONS" max="15000" min="5" type="java.lang.Integer">5</MaxConnections>
+                <FetchSize desc="SET_CONNECTION_POOL_FETCHSIZE" min="0" type="int">120</FetchSize>
+                <TraceSQL desc="SET_CONNECTION_POOL_TRACESQL" type="java.lang.Boolean">false</TraceSQL>
+                <RenewableFreeLimit desc="SET_CONNECTION_POOL_RENEWABLELEASES_FREE_LIMIT" max="5" min="3" type="java.lang.Integer">3</RenewableFreeLimit>
+                <RenewableLeases desc="SET_CONNECTION_POOL_RENEWABLELEASES" type="java.lang.Boolean">true</RenewableLeases>
+                <MaxLeaseDuration desc="SET_CONNECTION_POOL_MAXLEASEDURATION" max="14400000" min="5000" type="com.primavera.common.value.Duration">14400000</MaxLeaseDuration>
+            </ConnectionPool>
+            <ConnectionPool desc="SET_LONGRUNNING_CONNECTION_POOL" id="PML">
+                <ConnectionPoolResizeRate desc="SET_CONNECTION_POOL_CONNECTIONPOOLRESIZERATE" max="43200000" min="240000" type="com.primavera.common.value.Duration">240000</ConnectionPoolResizeRate>
+                <MaintenanceFrequency desc="SET_CONNECTION_POOL_MAINTENANCE_FREQUENCY" max="3600000" min="10000" type="com.primavera.common.value.Duration">60000</MaintenanceFrequency>
+                <LeaseRequestWaitTimeout desc="SET_CONNECTION_POOL_LEASEREQUESTWAITTIMEOUT" max="7200000" min="5000" type="com.primavera.common.value.Duration">30000</LeaseRequestWaitTimeout>
+                <MaxConnections desc="SET_CONNECTION_POOL_MAXCONNECTIONS" max="15000" min="5" type="java.lang.Integer">5</MaxConnections>
+                <FetchSize desc="SET_CONNECTION_POOL_FETCHSIZE" min="0" type="int">120</FetchSize>
+                <TraceSQL desc="SET_CONNECTION_POOL_TRACESQL" type="java.lang.Boolean">false</TraceSQL>
+                <RenewableFreeLimit desc="SET_CONNECTION_POOL_RENEWABLELEASES_FREE_LIMIT" max="5" min="3" type="java.lang.Integer">3</RenewableFreeLimit>
+                <RenewableLeases desc="SET_CONNECTION_POOL_RENEWABLELEASES" type="java.lang.Boolean">true</RenewableLeases>
+                <MaxLeaseDuration desc="SET_CONNECTION_POOL_MAXLEASEDURATION" max="21600000" min="5000" type="com.primavera.common.value.Duration">21600000</MaxLeaseDuration>
+            </ConnectionPool>
+            <ConnectionPool desc="SET_TRANSACTIONAL_CONNECTION_POOL" id="PMT">
+                <ConnectionPoolResizeRate desc="SET_CONNECTION_POOL_CONNECTIONPOOLRESIZERATE" max="43200000" min="240000" type="com.primavera.common.value.Duration">240000</ConnectionPoolResizeRate>
+                <MaintenanceFrequency desc="SET_CONNECTION_POOL_MAINTENANCE_FREQUENCY" max="3600000" min="10000" type="com.primavera.common.value.Duration">60000</MaintenanceFrequency>
+                <LeaseRequestWaitTimeout desc="SET_CONNECTION_POOL_LEASEREQUESTWAITTIMEOUT" max="7200000" min="5000" type="com.primavera.common.value.Duration">30000</LeaseRequestWaitTimeout>
+                <MaxConnections desc="SET_CONNECTION_POOL_MAXCONNECTIONS" max="15000" min="5" type="java.lang.Integer">5</MaxConnections>
+                <FetchSize desc="SET_CONNECTION_POOL_FETCHSIZE" min="0" type="int">120</FetchSize>
+                <TraceSQL desc="SET_CONNECTION_POOL_TRACESQL" type="java.lang.Boolean">false</TraceSQL>
+                <RenewableFreeLimit desc="SET_CONNECTION_POOL_RENEWABLELEASES_FREE_LIMIT" max="5" min="3" type="java.lang.Integer">3</RenewableFreeLimit>
+                <RenewableLeases desc="SET_CONNECTION_POOL_RENEWABLELEASES" type="java.lang.Boolean">true</RenewableLeases>
+                <MaxLeaseDuration desc="SET_CONNECTION_POOL_MAXLEASEDURATION" max="21600000" min="5000" type="com.primavera.common.value.Duration">21600000</MaxLeaseDuration>
+            </ConnectionPool>
+            <ContentRepository desc="SET_DB_CONTENTREPOSITORY">
+                <Type desc="SET_CONTENTREPOSITORY_TYPE" o1="None" o2="Oracle" o3="SharePoint" o4="CMIS" o5="OracleDatabase" prevalidator="com.primavera.admintool.ContentRepositoryTypePrevalidator" type="javax.swing.JComboBox">None</Type>
+                <MaxDocumentSize desc="SET_MAXDOCUMENTSIZE" max="1048576" min="0" type="int">10240</MaxDocumentSize>
+                <Oracle desc="SET_CONTENTREPOSITORY_ORACLE">
+                    <Host desc="SET_CONTENTREPOSITORY_ORACLE_HOST" type="java.lang.String"/>
+                    <Port desc="SET_CONTENTREPOSITORY_ORACLE_PORT" max="65535" min="1" type="java.lang.String"/>
+                    <OracleHome desc="SET_CONTENTREPOSITORY_ORACLE_HOME" type="java.lang.String"/>
+                    <SecurityGroup desc="SET_CONTENTREPOSITORY_ORACLE_SECURITYGROUP" type="java.lang.String"/>
+                    <SecurityAccount desc="SET_CONTENTREPOSITORY_ORACLE_SECURITYACCOUNT" type="java.lang.String"/>
+                    <DocumentType desc="SET_CONTENTREPOSITORY_ORACLE_DOCUMENTTYPE" type="java.lang.String"/>
+                    <Prefix desc="SET_CONTENTREPOSITORY_ORACLE_PREFIX" type="java.lang.String"/>
+                    <AdminUser desc="SET_CONTENTREPOSITORY_ORACLE_ADMIN_USER" type="java.lang.String"/>
+                    <AuthenticationMode desc="SET_CONTENTREPOSITORY_ORACLE_AUTHENTICATION_MODE" o1="Single User" o2="Multiple User" type="javax.swing.JComboBox">Multiple User</AuthenticationMode>
+                    <Autovue desc="SET_CONTENTREPOSITORY_ORACLE_AUTOVUE">
+                        <URL desc="SET_CONTENTREPOSITORY_ORACLE_AUTOVUE_URL" type="java.lang.String"/>
+                        <AutovueEnabled desc="SET_CONTENTREPOSITORY_ORACLE_AUTOVUE_ENABLE" type="java.lang.Boolean">false</AutovueEnabled>
+                    </Autovue>
+                </Oracle>
+                <SharePoint desc="SET_CONTENTREPOSITORY_SHAREPOINT">
+                    <LoginName desc="SET_CONTENTREPOSITORY_SHAREPOINT_LOGIN_NAME" type="java.lang.String"/>
+                    <Password desc="SET_CONTENTREPOSITORY_SHAREPOINT_PASSWORD" encrypt="true" pw="y" type="java.lang.String"/>
+                    <AuthenticationMode desc="SET_CONTENTREPOSITORY_SHAREPOINT_AUTH_MODE" o1="Single User" o2="Multiple User" type="javax.swing.JComboBox">Multiple User</AuthenticationMode>
+                    <HostName desc="SET_CONTENTREPOSITORY_SHAREPOINT_HOST_NAME" type="java.lang.String"/>
+                    <Domain desc="SET_CONTENTREPOSITORY_SHAREPOINT_DOMAIN" type="java.lang.String"/>
+                    <LibraryURL desc="SET_CONTENTREPOSITORY_SHAREPOINT_LIBRARY_URL" type="java.lang.String"/>
+                    <WebServiceURL desc="SET_CONTENTREPOSITORY_SHAREPOINT_WS_URL" type="java.lang.String"/>
+                    <ExternalLibraryURL desc="SET_CONTENTREPOSITORY_SHAREPOINT_EXTERNAL_LIBRARY_URL" type="java.lang.String"/>
+                    <Autovue desc="SET_CONTENTREPOSITORY_SHAREPOINT_AUTOVUE">
+                        <URL desc="SET_CONTENTREPOSITORY_SHAREPOINT_AUTOVUE_URL" type="java.lang.String">http://localhost/site/_layouts/1033/vue.aspx</URL>
+                        <AutovueEnabled desc="SET_CONTENTREPOSITORY_SHAREPOINT_AUTOVUE_ENABLE" type="java.lang.Boolean">false</AutovueEnabled>
+                    </Autovue>
+                </SharePoint>
+                <CMIS desc="SET_CONTENTREPOSITORY_CMIS">
+                    <LoginName desc="SET_CONTENTREPOSITORY_CMIS_LOGIN_NAME" type="java.lang.String"/>
+                    <Password desc="SET_CONTENTREPOSITORY_CMIS_PASSWORD" encrypt="true" pw="y" type="java.lang.String"/>
+                    <AuthenticationMode desc="SET_CONTENTREPOSITORY_CMIS_AUTH_MODE" o1="Single User" o2="Multiple User" type="javax.swing.JComboBox">Multiple User</AuthenticationMode>
+                    <RepositoryName desc="SET_CONTENTREPOSITORY_CMIS_REPOSITORY_NAME" type="java.lang.String"/>
+                    <DocumentHome desc="SET_CONTENTREPOSITORY_CMIS_DOCUMENT_HOME" type="java.lang.String"/>
+                    <WebServiceURL desc="SET_CONTENTREPOSITORY_CMIS_WS_URL" type="java.lang.String"/>
+                    <Autovue desc="SET_CONTENTREPOSITORY_CMIS_AUTOVUE">
+                        <URL desc="SET_CONTENTREPOSITORY_CMIS_AUTOVUE_URL" type="java.lang.String"/>
+                        <AutovueEnabled desc="SET_CONTENTREPOSITORY_CMIS_AUTOVUE_ENABLE" type="java.lang.Boolean">false</AutovueEnabled>
+                    </Autovue>
+                </CMIS>
+            </ContentRepository>
+
+            <SessionSettings desc="SET_DB_SESSION_SETTINGS">
+                <Setting1 desc="SET_DB_SESSION_SETTING1" type="java.lang.String"/>
+                <Setting2 desc="SET_DB_SESSION_SETTING2" type="java.lang.String"/>
+                <Setting3 desc="SET_DB_SESSION_SETTING3" type="java.lang.String"/>
+                <Setting4 desc="SET_DB_SESSION_SETTING4" type="java.lang.String"/>
+                <Setting5 desc="SET_DB_SESSION_SETTING5" type="java.lang.String"/>
+            </SessionSettings>
+            <CostBasedOptimizationSettings desc="SET_DB_CBO_SETTINGS">
+                <EnableCBO desc="SET_DB_CBO_SETTINGS_ENABLECBO" type="java.lang.Boolean">false</EnableCBO>
+                <DumpMatchingSQL desc="SET_DB_CBO_SETTINGS_DUMPMATCHINGSQL" type="java.lang.boolean">false</DumpMatchingSQL>
+            </CostBasedOptimizationSettings>
+            <Eventing desc="SET_EVENTING">
+                <Enabled desc="SET_EVENTING_ENABLED" type="java.lang.Boolean">false</Enabled>
+                <Interval desc="SET_EVENTING_EXECUTIONINTERVAL" max="600000" min="1000" type="com.primavera.common.value.Duration">300000</Interval>
+                <MaxQueueSize desc="SET_QUEUE_SIZE" max="5000" min="10" type="java.lang.Integer">1000</MaxQueueSize>
+                <EventingShowCosts desc="SET_EVENTING_SHOWCOSTS" type="java.lang.Boolean">false</EventingShowCosts>
+                <QueueConnectionFactory desc="SET_QUEUE_FACTORY" type="java.lang.String"/>
+                <QueueDestination desc="SET_QUEUE_DESTINATION" type="java.lang.String"/>
+                <JMSSecurityEnabled desc="SET_JMS_SECURITY_ENABLED" type="java.lang.Boolean">true</JMSSecurityEnabled>
+                <JMSUsername desc="SET_JMS_USERNAME" type="java.lang.String"/>
+                <JMSPassword desc="SET_JMS_PASSWORD" encrypt="true" type="java.lang.String"/>
+                <EventingConfig desc="SET_EVENTING_CONFIG" immutable="Y" type="EventingConfig"/>
+            </Eventing>
+            <AIA desc="SET_AIA">
+                <Enabled desc="SET_AIA_ENABLED" type="java.lang.Boolean">false</Enabled>
+                <DataSource desc="SET_AIA_DATASOURCE" type="java.lang.String">AIA_ProjP6EPPM_DS</DataSource>
+                <UserName desc="SET_AIA_USERNAME" type="java.lang.String"/>
+                <ContextFactory desc="SET_AIA_CONTEXTFACTORY" type="java.lang.String">weblogic.jndi.WLInitialContextFactory</ContextFactory>
+                <QueueName desc="SET_AIA_QUEUE_NAME" type="java.lang.String">AIA_ProjP6EPPMJMSQueue</QueueName>
+                <SystemId desc="SET_AIA_SYSTEM_ID" type="java.lang.String">P6EPPM_01</SystemId>
+                <TargetSystemId desc="SET_AIA_TARGET_SYSTEM_ID" type="java.lang.String"/>
+            </AIA>
+            <Fusion desc="SET_FUSION_PROJECTS">
+                <URL desc="SET_FUSION_SERVICE_URL" type="java.lang.String"/>
+                <UserName desc="SET_FUSION_SERVICE_USERNAME" type="java.lang.String"/>
+                <Password desc="SET_FUSION_SERVICE_PASSWORD" encrypt="true" type="java.lang.String"/>                       
+		<IntegrationId desc="SET_FUSION_SERVICE_INTEGRATION_ID" immutable="Y" type="IntegrationId"/>
+                <SchemaVersion desc="SET_FUSION_SERVICE_SCHEMA_VERSION" type="java.lang.String">v1</SchemaVersion>	
+            </Fusion>
+            <BIPublisher desc="SET_BIPUB">
+                <BIPublisherServer desc="SET_BIPSERVER" type="java.lang.String"/>
+                <BIPublisherVersion desc="SET_BIP_VERSION" type="java.lang.String">11.1.1.7.x</BIPublisherVersion>
+                <FolderPath desc="SET_BIPFOLDERS" type="java.lang.String">/Primavera Reports/Project Reports;</FolderPath>
+                <UserName desc="SET_BIP_USERNAME" type="java.lang.String"/>
+                <Password desc="SET_BIP_PASSWORD" encrypt="true" type="java.lang.String"/>
+                <FromAddress desc="SET_BIP_FROM_ADDRESS" type="java.lang.String">no-reply-BIpublisher-report@oracle.com</FromAddress>                
+                <UsersFolder desc="SET_BIP_USERSFOLDER" type="java.lang.Boolean">false</UsersFolder>
+                <StripUserChars desc="SET_BIP_STRIP_CHAR" type="java.lang.Boolean">false</StripUserChars>
+                <CacheTimeout desc="SET_BIP_CACHE_TIMEOUT" type="com.primavera.common.value.Duration">86400000</CacheTimeout>
+            </BIPublisher>
+            <BPM desc="SET_BPM">
+                <BPMConnectorFile desc="SET_BPM_CONNECTOR_FILE" type="java.lang.String"/>
+                <SupportLibRoot desc="SET_BPM_SUPPORT_LIB_DIR" type="java.lang.String"/>
+                <BPMConfig desc="SET_BPM_CONFIG" type="BPMConfig"/>
+            </BPM>
+        </Instance>
+    </Database>
+
+    <ThreadPool desc="SET_THREADPOOL">
+        <NumThreads desc="SET_THREADPOOL_NUMTHREADS" max="300" min="2" type="java.lang.Integer">10</NumThreads>
+        <MaxTaskDuration desc="SET_THREADPOOL_MAXTASKDURATION" max="2073600000" min="10000" type="com.primavera.common.value.Duration">2073600000</MaxTaskDuration>
+        <MaxTaskDurationLongRunning desc="SET_THREADPOOL_MAXTASKDURATION_LONGRUNNING" max="2073600000" min="10000" type="com.primavera.common.value.Duration">1200000</MaxTaskDurationLongRunning>
+        <MaintenanceFrequency desc="SET_THREADPOOL_MAINTENANCEFREQUENCY" max="2073600000" min="15000" type="com.primavera.common.value.Duration">300000</MaintenanceFrequency>
+    </ThreadPool>
+
+    
+
+    <Log desc="SET_LOG">
+        <ConsoleLogger desc="SET_LOG_CONSOLELOGGER">
+            <SeverityLevel desc="SET_LOG_SEVERITYLEVEL" o1="debug" o2="info" o3="warn" o4="error" type="javax.swing.JComboBox">info</SeverityLevel>
+            <Enabled desc="SET_LOG_ENABLED" type="java.lang.Boolean">false</Enabled>
+        </ConsoleLogger>
+        <FileLogger desc="SET_LOG_FILELOGGER">
+            <LogFileSize desc="SET_LOG_ARCHIVESIZE" max="15360" min="1024" type="java.lang.Integer">1024</LogFileSize>
+            <SeverityLevel desc="SET_LOG_SEVERITYLEVEL" o1="debug" o2="info" o3="warn" o4="error" type="javax.swing.JComboBox">error</SeverityLevel>
+            <ArchiveNumber desc="SET_LOG_ARCHIVENUMBER" max="2073600000" min="2" type="java.lang.Integer">6</ArchiveNumber>
+            <HTML desc="SET_HTML_FILELOGGER" type="java.lang.Boolean">true</HTML>
+            <Enabled desc="SET_LOG_ENABLED" type="java.lang.Boolean">true</Enabled>
+        </FileLogger>
+        <EmailLogger desc="SET_LOG_EMAILLOGGER">
+            <SMTPHost desc="SET_LOG_SMTP" type="java.lang.String"/>
+            <FromEmailAddress desc="SET_LOG_FROMEMAIL" type="java.lang.String"/>
+            <ToEmailAddress desc="SET_LOG_TOEMAIL" type="java.lang.String"/>
+            <EmailSubject desc="SET_LOG_EMAIL_SUBJECT" type="java.lang.String">P6 Web Access error</EmailSubject>
+            <Enabled desc="SET_LOG_ENABLED" type="java.lang.Boolean">false</Enabled>
+        </EmailLogger>
+        <Asynchronous desc="SET_ASYNCHRONOUS_LOGGING" type="java.lang.Boolean">true</Asynchronous>
+    </Log>
+
+    <DirectoryServices desc="SET_DIRECTORYSERVICES">
+        <ContextProviderURL desc="SET_DIRECTORY_CONTEXTPROVIDER_URL" type="java.lang.String"/>
+        <ContextFactory desc="SET_DIRECTORY_CONTEXT_FACTORY" type="java.lang.String"/>
+        <Principal desc="SET_DIRECTORY_PRINCIPAL" type="java.lang.String"/>
+        <Credentials desc="SET_DIRECTORY_CREDENTIALS" encrypt="true" type="java.lang.String"/>
+        <SecurityLevel desc="SET_DIRECTORY_SECURITYLEVEL" o1="NONE" o2="SIMPLE" type="javax.swing.JComboBox">SIMPLE</SecurityLevel>
+        <Lookup desc="SET_DIRECTORY_LOOKUP" type="java.lang.String">primavera</Lookup>
+    </DirectoryServices>
+
+    <ClientProperties desc="SET_CLIENTPROPERTIES">
+        <JavaPluginURL_IE desc="SET_JAVA_PLUGIN_URL_IE" type="java.lang.String">../applets/jre/jre-7u85-windows-i586.exe#Version=1,7,0,85</JavaPluginURL_IE>
+        <JavaPluginURL_FF desc="SET_JAVA_PLUGIN_URL_FF" type="java.lang.String">../applets/jre/getplugin.jsp</JavaPluginURL_FF>
+        <JavaPluginVersionID_IE desc="SET_JAVA_PLUGIN_VERID_IE" type="java.lang.String">8AD9C840-044E-11D1-B3E9-00805F499D93</JavaPluginVersionID_IE>
+        <JavaPluginVersionID_FF desc="SET_JAVA_PLUGIN_VERID_FF" type="java.lang.String">application/x-java-applet;version=1.7.0.85</JavaPluginVersionID_FF>
+        <JnlpJreVersion desc="SET_JNLP_JRE_VERSION" type="java.lang.String">1.6.0_20+</JnlpJreVersion>
+        <EnableAppletsAsJnlp desc="SET_ENABLE_APPLETS_AS_JNLP" type="java.lang.Boolean">false</EnableAppletsAsJnlp>
+        <MaxAppletMemory desc="SET_MAX_APPLET_MEMORY" max="4096" min="64" type="java.lang.Integer">1024</MaxAppletMemory>
+        <CompressAppletCommunication desc="SET_APPLET_COMPRESSED_COMMUNICATION" type="java.lang.Boolean">true</CompressAppletCommunication>
+        <CompressHtmlContent desc="SET_COMPRESS_HTML_CONTENT" type="java.lang.Boolean">true</CompressHtmlContent>
+        <ServerAndPortOverride desc="SET_URL_SERVERANDPORTOVERRIDE" type="java.lang.String">http://servername:80</ServerAndPortOverride>        
+        <AjaxRequestWaitTimeout desc="SET_AJAX_REQUEST_WAITTIMEOUT" type="com.primavera.common.value.Duration">30000</AjaxRequestWaitTimeout>
+    </ClientProperties>
+
+    <WebProxy desc="SET_WEBPROXY">
+        <Server desc="SET_WEBPROXY_SERVER" type="java.lang.String"/>
+        <Port desc="SET_WEBPROXY_PORT" max="65535" min="1" type="java.lang.Integer">80</Port>
+        <IgnoreList desc="SET_WEBPROXY_IGNORES"/>
+    </WebProxy>
+
+    <Application desc="SET_APPLICATION">
+        <Calendar desc="SET_CALENDAR" hidden="y">
+            <Type desc="SET_CALENDAR_TYPE" o1="Hourly" o2="Daily" type="javax.swing.JComboBox">Hourly</Type>
+        </Calendar>
+        <Nomenclature desc="SET_NOMENCLATURE" hidden="y">
+            <UseP3eClassicNomenclature desc="SET_NOMENCLATURE_TYPE" hidden="y" type="java.lang.Boolean">true</UseP3eClassicNomenclature>
+        </Nomenclature>
+        <IgnoreDaylightSavingsTime desc="SET_IGNOREDAYLIGHTSAVINGS" type="java.lang.Boolean">true</IgnoreDaylightSavingsTime>
+        <ExcelImportMaxTransactions desc="SET_EXCEL_IMPORT_MAX_TRANSACTIONS" max="2000" min="100" type="java.lang.Integer">2000</ExcelImportMaxTransactions>
+        <ExcelImportMaxFileSize desc="SET_EXCEL_IMPORT_FILE_MAX_SIZE" max="4096" min="64" type="java.lang.Integer">1048</ExcelImportMaxFileSize>
+        <AllowAutoSummarizeOption desc="SET_AUTO_SUMMARIZE" type="java.lang.Boolean">true</AllowAutoSummarizeOption>
+        <DBDropdownKeyword desc="SET_DBDROPDOWNKEYWORD" type="java.lang.String"/>
+        <LogoutURL desc="SET_APPLICATION_LOGOUTURL" type="java.lang.String"/>
+        <FilteredPortfolioStalePeriod desc="SET_FILTERED_PORTFOLIO_STALE_PERIOD" type="com.primavera.common.value.Duration">86400000</FilteredPortfolioStalePeriod>
+        <MaxProjectsInPortfolio desc="SET_MAX_PROJECTS_IN_PORTFOLIO" max="100000" min="1" type="java.lang.Integer">1000</MaxProjectsInPortfolio>
+        <MaxRPSpreadsheetProjects desc="SET_MAX_RPSS_PORTFOLIO_PROJECTS_LOADED" max="1000" min="1" type="java.lang.Integer">100</MaxRPSpreadsheetProjects>
+        <MaxPortletsPerDashboard desc="SET_MAX_PORTLETS_PER_DASHBOARD" max="50" min="1" type="java.lang.Integer">12</MaxPortletsPerDashboard>
+        <MaxProjectsPerPortfolioView desc="SET_MAX_PROJECTS_PER_PORTFOLIO_VIEW" max="20000" min="1" type="java.lang.Integer">5000</MaxProjectsPerPortfolioView>
+        <MaxActivitiesPerActivityView desc="SET_MAX_ACTIVITIES_PER_ACTIVITY_VIEW" max="100000" min="1" type="java.lang.Integer">5000</MaxActivitiesPerActivityView>
+        <MaxAssignmentsPerAssignmentView desc="SET_MAX_ASSIGNMENTS_PER_ASSIGNMENT_VIEW" max="15000" min="1" type="java.lang.Integer">2000</MaxAssignmentsPerAssignmentView>
+        <MaxProjectsPerProjectView desc="SET_MAX_PROJECTS_PER_PROJECT_VIEW" max="100000" min="1" type="java.lang.Integer">2000</MaxProjectsPerProjectView>
+        <MaxRescChartsGroupingLimit desc="SET_MAX_RESC_CHART_GROUPING_LIMIT" max="5000" min="1" type="java.lang.Integer">100</MaxRescChartsGroupingLimit>
+        <MaxUsersPerSharedViewAndFilter desc="SET_MAX_USERS_PER_SHARED_VIEW_AND_FILTER" max="150" min="1" type="java.lang.Integer">100</MaxUsersPerSharedViewAndFilter>
+        <MaxMRUListItems desc="SET_MAX_MRU_LIST_ITEMS" max="10" min="1" type="java.lang.Integer">5</MaxMRUListItems>
+        <CustomPortletURLUserInfoEncryptionKey desc="SET_BLOWFISH_ENCRYPTION_KEY" type="java.lang.String"/>
+        <UsePostForCustomPortlets desc="SET_USE_POST_FOR_CUSTOM_PORTLETS" type="java.lang.Boolean">false</UsePostForCustomPortlets>
+        <TransactionMonitorExecutionInterval desc="SET_TRANSACTIONMONITOR_EXECUTIONINTERVAL" min="1000" type="com.primavera.common.value.Duration">600000</TransactionMonitorExecutionInterval>
+        <EnableXSSFilter desc="SET_XSS_FILTER" type="java.lang.Boolean">true</EnableXSSFilter>
+        <EnableCSRFCheck desc="SET_ENABLE_CSRF_CHECK" type="java.lang.Boolean">true</EnableCSRFCheck>
+        <EnableSessionHijackCheck desc="SET_ENABLE_SESS_HIJACK_CHECK" type="java.lang.Boolean">false</EnableSessionHijackCheck>
+        <CMEncryptionKey desc="SET_CM_ENCRYPTION_KEY" type="java.lang.String">F55BB352-B5FE-3AB2-A91C-189F0079D31E</CMEncryptionKey>
+        <P6HelpServerUrl desc="SET_P6_HELP_SERVER_URL" type="java.lang.String">https://docs.oracle.com/cd/E63414_01/p6help/</P6HelpServerUrl>
+        <TMHelpServerUrl desc="SET_TM_HELP_SERVER_URL" type="java.lang.String">https://docs.oracle.com/cd/E63414_01/team_member/web/help/</TMHelpServerUrl>
+        <Notifications desc="SET_NOTIFICATIONS">
+            <EnableIssueNotifications desc="SET_NOTIFICATIONS_ENABLEISSUE" type="java.lang.Boolean">false</EnableIssueNotifications>
+            <NotificationsFromEmailOverride desc="SET_NOTIFICATIONS_FROMEMAILOVERRIDE" type="java.lang.Boolean">false</NotificationsFromEmailOverride>
+            <NotificationsFromEmail desc="SET_NOTIFICATIONS_FROMEMAIL" type="java.lang.String"/>
+        </Notifications>
+        <UPKSetup2 desc="SET_UPK_SETUP">
+            <EnableUPK desc="SET_UPK_ENABLED" type="java.lang.Boolean">false</EnableUPK>
+            <UPKServerURL desc="SET_UPK_SERVER_URL" type="java.lang.String"/>
+        </UPKSetup2>
+    </Application>
+
+    <Services desc="SET_SERVICES">
+        <EnableAllServices desc="SET_ENABLEALLSERVICES" type="java.lang.Boolean">false</EnableAllServices>
+        <ASAPPollRate desc="SET_ASAPPOLLRATE" min="1000" type="com.primavera.common.value.Duration">10000</ASAPPollRate>
+        <ASAPCleanupRate desc="SET_ASAPCLEANUPRATE" max="2073600000" min="86400000" type="com.primavera.common.value.Duration">86400000</ASAPCleanupRate>
+        <EnableStartupCleaning desc="SET_STARTUPCLEANINGENABLED" type="java.lang.Boolean">false</EnableStartupCleaning>
+		<JobServiceSharedLocation desc="SET_JOBSERVICESHAREDFOLDER_LOC" type="java.lang.String"/>
+        
+        <Publication desc="SET_PX">
+
+            <Settings>
+
+                <General>
+                    <PageSize desc="SET_PX_PAGE_SIZE" type="java.lang.Integer">32</PageSize>
+                    <MaxJobCount desc="SET_PX_JOB_COUNT" type="java.lang.Integer">1</MaxJobCount>
+                </General>
+
+                <TimeDistributed>
+                    <PageSize desc="SET_PX_PAGE_SIZE" type="java.lang.Integer">16</PageSize>
+                    <MaxJobCount desc="SET_PX_JOB_COUNT" type="java.lang.Integer">1</MaxJobCount>
+                </TimeDistributed>
+
+                <Blob>
+                    <PageSize desc="SET_PX_PAGE_SIZE" type="java.lang.Integer">25</PageSize>
+                    <MaxJobCount desc="SET_PX_JOB_COUNT" type="java.lang.Integer">1</MaxJobCount>
+                </Blob>
+
+                <Log desc="SET_PX_LOG">
+                    <SeverityLevel desc="SET_LOG_SEVERITYLEVEL" o1="debug" o2="info" o3="warn" o4="error" type="javax.swing.JComboBox">info</SeverityLevel>
+                    <GlobalLogFileSucessCap desc="SET_PX_GLOBAL_SUCCESS_CAP" type="java.lang.Integer">5</GlobalLogFileSucessCap>
+                    <GlobalLogFileFailCap desc="SET_PX_GLOBAL_FAIL_CAP" type="java.lang.Integer">5</GlobalLogFileFailCap>
+                    <ProjectLogFileSucessCap desc="SET_PX_PROJECT_SUCCESS_CAP" type="java.lang.Integer">5</ProjectLogFileSucessCap>
+                    <ProjectLogFileFailCap desc="SET_PX_PROJECT_FAIL_CAP" type="java.lang.Integer">5</ProjectLogFileFailCap>
+                </Log>
+
+            </Settings>
+
+            <Services>
+
+                <PxProjectArbiterService desc="SET_PX_PROJECT_ARBITER_SERVICE">
+                    <Interval desc="SET_INTERVAL" min="1000" type="com.primavera.common.value.Duration">10000</Interval>
+                    <ConcurrentThreads desc="SET_CONCURRENTTHREADS" max="1" min="0" type="java.lang.Integer">0</ConcurrentThreads>
+                    <ActiveMode desc="SET_ACTIVEMODE" type="java.lang.Boolean">true</ActiveMode>
+                </PxProjectArbiterService>
+
+                <PxProjectService desc="SET_PX_PROJECT_SERVICE">
+                    <Interval desc="SET_INTERVAL" min="1000" type="com.primavera.common.value.Duration">10000</Interval>
+                    <ConcurrentThreads desc="SET_CONCURRENTTHREADS" max="20" min="0" type="java.lang.Integer">0</ConcurrentThreads>
+                    <ActiveMode desc="SET_ACTIVEMODE" type="java.lang.Boolean">true</ActiveMode>
+                </PxProjectService>
+
+                <PxEnterpriseDataService desc="SET_PX_ENTERPRISE_DATA_SERVICE">
+                    <Interval desc="SET_INTERVAL" min="1000" type="com.primavera.common.value.Duration">10000</Interval>
+                    <ConcurrentThreads desc="SET_CONCURRENTTHREADS" max="1" min="0" type="java.lang.Integer">0</ConcurrentThreads>
+                    <ActiveMode desc="SET_ACTIVEMODE" type="java.lang.Boolean">true</ActiveMode>
+                </PxEnterpriseDataService>
+
+                <PxEnterpriseSummariesService desc="SET_PX_ENTERPRISE_SUMMARY_SERVICE">
+                    <Interval desc="SET_INTERVAL" min="1000" type="com.primavera.common.value.Duration">10000</Interval>
+                    <ConcurrentThreads desc="SET_CONCURRENTTHREADS" max="1" min="0" type="java.lang.Integer">0</ConcurrentThreads>
+                    <ActiveMode desc="SET_ACTIVEMODE" type="java.lang.Boolean">true</ActiveMode>
+                </PxEnterpriseSummariesService>
+
+                <PxResourceManagementService desc="SET_PX_RESOURCE_MGMT_SERVICE">
+                    <Interval desc="SET_INTERVAL" min="1000" type="com.primavera.common.value.Duration">10000</Interval>
+                    <ConcurrentThreads desc="SET_CONCURRENTTHREADS" max="1" min="0" type="java.lang.Integer">0</ConcurrentThreads>
+                    <ActiveMode desc="SET_ACTIVEMODE" type="java.lang.Boolean">true</ActiveMode>
+                </PxResourceManagementService>
+
+                <PxSecurityService desc="SET_PX_SECURITY_SERVICE">
+                    <Interval desc="SET_INTERVAL" min="1000" type="com.primavera.common.value.Duration">10000</Interval>
+                    <ConcurrentThreads desc="SET_CONCURRENTTHREADS" max="1" min="0" type="java.lang.Integer">0</ConcurrentThreads>
+                    <ActiveMode desc="SET_ACTIVEMODE" type="java.lang.Boolean">true</ActiveMode>
+                </PxSecurityService>
+
+            </Services>
+
+        </Publication>
+
+        <LicenseService desc="SET_LICENSESERVICE">
+            <UpdateRate desc="SET_LICENSESERVICE_UPDATERATE" max="60000" min="100" type="com.primavera.common.value.Duration">60000</UpdateRate>
+            <ExpirationCheckRate desc="SET_LICENSESERVICE_EXPIRATIONCHECKRATE" max="900000" min="500" type="com.primavera.common.value.Duration">900000</ExpirationCheckRate>
+        </LicenseService>
+
+        <TimestampService desc="SET_TIMESTAMPSERVICE">
+            <RefreshRate desc="SET_TIMESTAMPSERVICE_REFRESHRATE" max="3600000" min="15000" type="com.primavera.common.value.Duration">3600000</RefreshRate>
+        </TimestampService>
+
+        <RegistryService desc="SET_REGISTRYSERVICE">
+            <RefreshRate desc="SET_REGISTRYSERVICE_REFRESHRATE" max="3600000" min="15000" type="com.primavera.common.value.Duration">3600000</RefreshRate>
+            <StalePeriod desc="SET_REGISTRYSERVICE_STALEPERIOD" max="600000" min="60000" type="com.primavera.common.value.Duration">600000</StalePeriod>
+            <Port desc="SET_REGISTRYSERVICE_PORT" max="65535" min="1" type="java.lang.Integer">9192</Port>
+        </RegistryService>
+
+        <NextKeyService desc="SET_NEXTKEYSERVICE">
+            <RefreshRate desc="SET_NEXTKEYSERVICE_REFRESHRATE" max="3600000" min="15000" type="com.primavera.common.value.Duration">60000</RefreshRate>
+            <MaxCachedKeys desc="SET_NEXTKEYSERVICE_MAXCACHEDKEYS" max="100" min="1" type="java.lang.Integer">10</MaxCachedKeys>
+        </NextKeyService>
+        
+        <AlertNotificationService desc="SET_ALERTNOTIFICATIONSERVICE">
+            <RefreshRate desc="SET_ALERTNOTIFICATION_REFRESHRATE" max="900000" min="15000" type="com.primavera.common.value.Duration">30000</RefreshRate>
+        </AlertNotificationService>
+
+        <Performance desc="SET_PERFORMANCE">
+            <UseEnterpriseSummary desc="SET_PERFORMANCE_USEENTERPRISESUMMARY" type="java.lang.Boolean">false</UseEnterpriseSummary>
+            <MaxSummaryNodeCount desc="SET_PERFORMANCE_MAXSUMMARYNODECOUNT" max="50000" min="1" type="java.lang.Integer">1000</MaxSummaryNodeCount>
+        </Performance>
+
+        <WebScheduler desc="SET_WEBSCHEDULER">
+            <Interval desc="SET_INTERVAL" min="1000" type="com.primavera.common.value.Duration">10000</Interval>
+            <ConcurrentThreads desc="SET_CONCURRENTTHREADS" max="20" min="0" type="java.lang.Integer">0</ConcurrentThreads>
+            <ActiveMode desc="SET_ACTIVEMODE" type="java.lang.Boolean">true</ActiveMode>
+            <LoadAllCalendars desc="SET_LOADALLCALENDARS" type="java.lang.Boolean">true</LoadAllCalendars>
+        </WebScheduler>
+
+        <WebLeveler desc="SET_WEBLEVELER">
+            <Interval desc="SET_INTERVAL" min="1000" type="com.primavera.common.value.Duration">10000</Interval>
+            <ConcurrentThreads desc="SET_CONCURRENTTHREADS" max="20" min="0" type="java.lang.Integer">0</ConcurrentThreads>
+            <ActiveMode desc="SET_ACTIVEMODE" type="java.lang.Boolean">true</ActiveMode>
+        </WebLeveler>
+
+        <WebSummarizer desc="SET_WEBSUMMARIZER">
+            <Interval desc="SET_INTERVAL" min="1000" type="com.primavera.common.value.Duration">10000</Interval>
+            <ConcurrentThreads desc="SET_CONCURRENTTHREADS" max="20" min="0" type="java.lang.Integer">0</ConcurrentThreads>
+            <ActiveMode desc="SET_ACTIVEMODE" type="java.lang.Boolean">true</ActiveMode>
+            <MaxDurationSum desc="SET_MAXDURATIONSUM" type="java.lang.Integer">100000</MaxDurationSum>  
+        </WebSummarizer>
+        
+        
+        <CopyProject desc="SET_COPYPROJECT">
+            <Interval desc="SET_INTERVAL" min="1000" type="com.primavera.common.value.Duration">10000</Interval>
+            <ConcurrentThreads desc="SET_CONCURRENTTHREADS" max="20" min="0" type="java.lang.Integer">2</ConcurrentThreads>
+            <ActiveMode desc="SET_ACTIVEMODE" type="java.lang.Boolean">true</ActiveMode>
+        </CopyProject>
+        
+        <Unifier desc="SET_UNIFIER">        
+            <SendToScheduleSheet desc="SET_SEND_TO_SCHEDULE_SHEET">
+            <Interval desc="SET_INTERVAL" min="1000" type="com.primavera.common.value.Duration">10000</Interval>
+            <ConcurrentThreads desc="SET_CONCURRENTTHREADS" max="20" min="0" type="java.lang.Integer">2</ConcurrentThreads>
+            <ActiveMode desc="SET_ACTIVEMODE" type="java.lang.Boolean">true</ActiveMode>            
+        	</SendToScheduleSheet>
+        	
+        	<SummarizeByCBS desc="SET_SUMMARIZE_BY_CBS">
+            <Interval desc="SET_INTERVAL" min="1000" type="com.primavera.common.value.Duration">10000</Interval>
+            <ConcurrentThreads desc="SET_CONCURRENTTHREADS" max="20" min="0" type="java.lang.Integer">2</ConcurrentThreads>
+            <ActiveMode desc="SET_ACTIVEMODE" type="java.lang.Boolean">true</ActiveMode>            
+        	</SummarizeByCBS>
+        	
+        	<ProjectUpdateCheck desc="SET_PROJECT_UPDATE_CHECK">
+            <Interval desc="SET_INTERVAL" min="1000" type="com.primavera.common.value.Duration">10000</Interval>
+            <ConcurrentThreads desc="SET_CONCURRENTTHREADS" max="20" min="0" type="java.lang.Integer">2</ConcurrentThreads>
+            <ActiveMode desc="SET_ACTIVEMODE" type="java.lang.Boolean">true</ActiveMode>            
+        	</ProjectUpdateCheck>        
+        </Unifier>
+        
+        <GatewaySynchronization desc="SET_GATEWAY_SYNCHRONIZATION">
+            <Interval desc="SET_INTERVAL" min="1000" type="com.primavera.common.value.Duration">10000</Interval>
+            <ConcurrentThreads desc="SET_CONCURRENTTHREADS" max="20" min="0" type="java.lang.Integer">2</ConcurrentThreads>
+            <ActiveMode desc="SET_ACTIVEMODE" type="java.lang.Boolean">true</ActiveMode>            
+        </GatewaySynchronization>        
+        
+        <ApplyActuals desc="SET_APPLYACTUALS">
+            <Interval desc="SET_INTERVAL" min="1000" type="com.primavera.common.value.Duration">10000</Interval>
+            <ConcurrentThreads desc="SET_CONCURRENTTHREADS" max="20" min="0" type="java.lang.Integer">0</ConcurrentThreads>
+            <ActiveMode desc="SET_ACTIVEMODE" type="java.lang.Boolean">true</ActiveMode>
+        </ApplyActuals>
+
+        <OverallocationCheck desc="SET_OVERALLOCATIONCHECK">
+            <Interval desc="SET_INTERVAL" min="1000" type="com.primavera.common.value.Duration">30000</Interval>
+            <ConcurrentThreads desc="SET_CONCURRENTTHREADS" max="20" min="0" type="java.lang.Integer">0</ConcurrentThreads>
+            <ActiveMode desc="SET_ACTIVEMODE" type="java.lang.Boolean">true</ActiveMode>
+        </OverallocationCheck>
+        
+        <StatusUpdateCheck desc="SET_STATUSUPDATECHECK">
+            <Enabled desc="SET_STATUSUPDATECHECK_ENABLED" type="java.lang.Boolean">false</Enabled>
+            <Time desc="SET_STATUSUPDATECHECK_TIME" o1="12 AM" o10="9 AM" o11="10 AM" o12="11 AM" o13="12 PM" o14="1 PM" o15="2 PM" o16="3 PM" o17="4 PM" o18="5 PM" o19="6 PM" o2="1 AM" o20="7 PM" o21="8 PM" o22="9 PM" o23="10 PM" o24="11 PM" o3="2 AM" o4="3 AM" o5="4 AM" o6="5 AM" o7="6 AM" o8="7 AM" o9="8 AM" type="javax.swing.JComboBox">12 AM</Time>
+        </StatusUpdateCheck>
+
+        <PeriodPerformance desc="SET_PERIODPERFORMANCE">
+            <Interval desc="SET_INTERVAL" min="1000" type="com.primavera.common.value.Duration">10000</Interval>
+            <ConcurrentThreads desc="SET_CONCURRENTTHREADS" max="20" min="0" type="java.lang.Integer">0</ConcurrentThreads>
+            <ActiveMode desc="SET_ACTIVEMODE" type="java.lang.Boolean">true</ActiveMode>
+        </PeriodPerformance>
+
+        <RecalcCost desc="SET_RECALCCOST">
+            <Interval desc="SET_INTERVAL" min="1000" type="com.primavera.common.value.Duration">10000</Interval>
+            <ConcurrentThreads desc="SET_CONCURRENTTHREADS" max="20" min="0" type="java.lang.Integer">0</ConcurrentThreads>
+            <ActiveMode desc="SET_ACTIVEMODE" type="java.lang.Boolean">true</ActiveMode>
+        </RecalcCost>
+
+        <SyncActualThisPeriod desc="SET_SYNCACTUALTHISPERIOD">
+            <Enabled desc="SET_SYNCACTUALTHISPERIOD_ENABLED" type="java.lang.Boolean">false</Enabled>
+            <ExecutionInterval desc="SET_SYNCACTUALTHISPERIOD_EXECUTIONINTERVAL" min="1000" type="com.primavera.common.value.Duration">300000</ExecutionInterval>
+            <ActivityThreshold desc="SET_SYNCACTUALTHISPERIOD_ACTIVITYTHRESHOLD" min="1" type="java.lang.Integer">8000</ActivityThreshold>
+            <ConcurrentThreads desc="SET_CONCURRENTTHREADS" max="20" min="0" type="java.lang.Integer">0</ConcurrentThreads>
+        </SyncActualThisPeriod>
+
+        <SyncRemainToPlanned desc="SET_SYNCREMAINTOPLANNED">
+            <Enabled desc="SET_SYNCREMAINTOPLANNED_ENABLED" type="java.lang.Boolean">false</Enabled>
+            <ExecutionInterval desc="SET_SYNCREMAINTOPLANNED_EXECUTIONINTERVAL" min="1000" type="com.primavera.common.value.Duration">300000</ExecutionInterval>
+            <ActivityThreshold desc="SET_SYNCREMAINTOPLANNED_ACTIVITYTHRESHOLD" min="1" type="java.lang.Integer">8000</ActivityThreshold>
+            <ConcurrentThreads desc="SET_CONCURRENTTHREADS" max="20" min="0" type="java.lang.Integer">0</ConcurrentThreads>
+        </SyncRemainToPlanned>
+
+        <SyncDurationPercent desc="SET_SYNCDURATIONPERCENT">
+            <Enabled desc="SET_SYNCDURATIONPERCENT_ENABLED" type="java.lang.Boolean">false</Enabled>
+            <ExecutionInterval desc="SET_SYNCDURATIONPERCENT_EXECUTIONINTERVAL" min="1000" type="com.primavera.common.value.Duration">300000</ExecutionInterval>
+            <ActivityThreshold desc="SET_SYNCDURATIONPERCENT_ACTIVITYTHRESHOLD" min="1" type="java.lang.Integer">8000</ActivityThreshold>
+            <ConcurrentThreads desc="SET_CONCURRENTTHREADS" max="20" min="0" type="java.lang.Integer">0</ConcurrentThreads>
+        </SyncDurationPercent>
+
+        <SendToFusion desc="SET_FUSION_JOB">
+            <Interval desc="SET_INTERVAL" min="1000" type="com.primavera.common.value.Duration">10000</Interval>
+            <ConcurrentThreads desc="SET_CONCURRENTTHREADS" max="20" min="0" type="java.lang.Integer">0</ConcurrentThreads>
+            <ActiveMode desc="SET_ACTIVEMODE" type="java.lang.Boolean">true</ActiveMode>
+        </SendToFusion>
+
+		<ImportService desc="SET_IMPORT_JOB">
+            <Interval desc="SET_INTERVAL" min="1000" type="com.primavera.common.value.Duration">10000</Interval>
+            <ConcurrentThreads desc="SET_CONCURRENTTHREADS" max="20" min="0" type="java.lang.Integer">2</ConcurrentThreads>
+            <ActiveMode desc="SET_ACTIVEMODE" type="java.lang.Boolean">true</ActiveMode>
+        </ImportService>
+        
+        <GlobalReplace desc="SET_GLOBAL_REPLACE">
+            <Interval desc="SET_INTERVAL" min="1000" type="com.primavera.common.value.Duration">10000</Interval>
+            <ConcurrentThreads desc="SET_CONCURRENTTHREADS" max="20" min="0" type="java.lang.Integer">2</ConcurrentThreads>
+            <ActiveMode desc="SET_ACTIVEMODE" type="java.lang.Boolean">true</ActiveMode>
+        </GlobalReplace>
+
+        <ProjectHierarchyCache desc="SET_PROJHIER_CACHE">
+            <CachePolicy desc="SET_PROJHIER_CACHE_POLICY" o1="FIFO" o2="LRU" o3="JVMM" o4="PRR" o5="PRFIFO" o6="PRLRU" o7="PRCC" type="javax.swing.JComboBox">PRR</CachePolicy>
+            <CacheLimit desc="SET_PROJHIER_CACHE_LIMIT" max="30000" min="1000" type="java.lang.Integer">5000</CacheLimit>
+            <MaintenanceFrequency desc="SET_PROJHIER_CACHE_MAINTENANCE_FREQUENCY" max="2073600000" min="60000" type="com.primavera.common.value.Duration">18000000</MaintenanceFrequency>
+            <EnableWbsHierarchyPreload desc="SET_PROJHIER_CACHE_ENABLE_WBS_HIERARCHY_PRELOAD" type="java.lang.Boolean">true</EnableWbsHierarchyPreload>
+        </ProjectHierarchyCache>
+
+        <CollaborationSyncService desc="SET_COLLABORATIONSYNCSERVICE">
+            <SynchronizationInterval desc="SET_COLLABORATIONSYNCSERVICE_SYNCINTERVAL" min="60000" type="com.primavera.common.value.Duration">3600000</SynchronizationInterval>
+        </CollaborationSyncService>
+
+        <AsynchJobs desc="SET_ASYNCH_JOBS">
+            <PurgeInterval desc="SET_ASYNCH_JOBS_PURGE_INTERVAL" type="com.primavera.common.value.Duration">3600000</PurgeInterval>
+            <GraceTime desc="SET_ASYNCH_JOBS_GRACE_TIME" type="com.primavera.common.value.Duration">86400000</GraceTime>
+        </AsynchJobs>
+
+        <MailService desc="SET_MAIL_SERVICE">
+            <EmailNotificationServer desc="SET_TIMESHEETAPPROVAL_EMAILSRV" type="java.lang.String"/>
+            <EmailSecurity desc="SET_MAIL_SERVICE_EMAIL_SECURITY" o1="SSL" o2="TLS" o3="None" type="javax.swing.JComboBox">SSL</EmailSecurity>            
+            <SmtpPort desc="SET_MAIL_SMTP_PORT" max="65535" min="1" type="java.lang.Integer">465</SmtpPort>
+            <SmtpFrom desc="SET_MAIL_SMTP_FROM" type="java.lang.String"/>
+            <SendInterval desc="SET_MAIL_SERVICE_SEND_INTERVAL" type="com.primavera.common.value.Duration">60000</SendInterval>
+            <MaxQueueLength desc="SET_MAIL_SERVICE_MAX_QUEUE_LENGTH" type="java.lang.Integer">250</MaxQueueLength>
+            <AuthorizedUser desc="SET_MAIL_SERVICE_AUTHORIZED_USER" type="java.lang.String"/>
+            <AuthorizedPassword desc="SET_MAIL_SERVICE_AUTHORIZED_PASSWORD" encrypt="true" type="java.lang.String"/>
+        </MailService>
+        
+        <ImportProject desc="NAME_IMPORT_PROJECT_FOLDER">
+            <QueueLocation desc="SET_IMPORT_TEMP_LOC" type="java.lang.String"/>
+            <ImportMaxFileSize desc="SET_IMPORT_PROJ_FILE_MAX_SIZE" min="1024" type="java.lang.Integer">102400</ImportMaxFileSize>
+        </ImportProject>
+
+        <UpdateBaseline desc="SET_UPDATEBASELINE">
+            <Interval desc="SET_INTERVAL" min="1000" type="com.primavera.common.value.Duration">10000</Interval>
+            <ConcurrentThreads desc="SET_CONCURRENTTHREADS" max="20" min="0" type="java.lang.Integer">2</ConcurrentThreads>
+            <ActiveMode desc="SET_ACTIVEMODE" type="java.lang.Boolean">true</ActiveMode>
+        </UpdateBaseline> 
+                
+    </Services>
+   <P6ProCloudConnect desc="SET_P6PRO_CLOUD_CONNECT">  
+   		<Security desc="SET_CLOUD_CONNECT_SECURITY">
+            <Authentication desc="SET_CLOUD_CONNECT_AUTHENTICATION">
+                <Mode desc="SET_CLOUD_CONNECT_AUTHENTICATION_MODE" o1="Username Token Profile" o2="SAML Token Profile" type="javax.swing.JComboBox">Username Token Profile</Mode>
+			</Authentication>
+		</Security> 		            
+        <FetchSize desc="SET_CONNECTION_POOL_FETCHSIZE" min="0" type="int">254</FetchSize>
+		<TaskMaxTime desc="SET_COMPRESSIONSERVER_TASKMAXTIME" max="14400000" min="10000" type="com.primavera.common.value.Duration">300000</TaskMaxTime>         
+        <TransactionMaxInactiveInterval desc="SET_COMPRESSIONSERVER_TRANSACTIONMAXINACTIVEINTERVAL" max="7200000" min="60000" type="com.primavera.common.value.Duration">900000</TransactionMaxInactiveInterval>
+        <SessionMaxInactiveInterval desc="SET_COMPRESSIONSERVER_SESSIONMAXINACTIVEINTERVAL" max="7200000" min="60000" type="com.primavera.common.value.Duration">7200000</SessionMaxInactiveInterval>
+    </P6ProCloudConnect>
+    
+    
+	
+    
+    <GeoCodeProvider desc="SET_GEO_PROVIDER">
+    	<GeoProvider desc="SET_GEO_PROVIDER_ENUM" o1="Oracle 11g GeoCoder" o2="Third Party Geocoder" o3="None" type="javax.swing.JComboBox">Oracle 11g GeoCoder</GeoProvider>
+        <GeoCoderProviderUrl desc="SET_GEO_PROVIDER_URL" type="java.lang.String">http://elocation.oracle.com/geocoder/gcserver</GeoCoderProviderUrl>
+    </GeoCodeProvider>
+    
+    <ReqMgrPerf desc="SET_REQ_MGR_PERF" hidden="y">
+        <Enabled desc="SET_REQ_MGR_PERF_ENABLED" hidden="y" type="java.lang.Boolean">false</Enabled>
+    </ReqMgrPerf>
+
+    <IntegrationServer desc="SET_INTEGRATION_SERVER">
+    	<Security desc="SET_INTEGRATION_SERVER_SECURITY">
+            <Authentication desc="SET_INTEGRATION_SERVER_AUTHENTICATION">
+                <Mode desc="SET_INTEGRATION_SERVER_AUTHENTICATION_MODE" o1="Username Token Profile" o2="SAML Token Profile" type="javax.swing.JComboBox">Username Token Profile</Mode>
+			</Authentication>
+		</Security>
+        <RMI desc="SET_RMI">
+            <Enable desc="SET_RMI_ENABLE" type="java.lang.Boolean">true</Enable>
+            <RegistryPort desc="SET_RMI_REGISTRY_PORT" max="65535" min="1" type="java.lang.Integer">9099</RegistryPort>
+            <StandardServiceEnable desc="SET_RMI_STANDARD_ENABLE" type="java.lang.Boolean">true</StandardServiceEnable>
+            <StandardServicePort desc="SET_STANDARD_SERVICE_PORT" max="65535" min="0" type="java.lang.Integer">0</StandardServicePort>
+            <SSLServiceEnable desc="SET_RMI_SSL_ENABLE" type="java.lang.Boolean">true</SSLServiceEnable>
+            <SSLServicePort desc="SET_SSL_SERVICE_PORT" max="65535" min="0" type="java.lang.Integer">0</SSLServicePort>
+            <CompressionServiceEnable desc="SET_RMI_COMRESSION_ENABLE" type="java.lang.Boolean">true</CompressionServiceEnable>
+            <CompressionServicePort desc="SET_COMPRESSION_SERVICE_PORT" max="65535" min="0" type="java.lang.Integer">0</CompressionServicePort>
+        </RMI>
+        <SessionTimeOut desc="SET_API_SESSION_TIME_OUT" max="2073600000" min="1" type="com.primavera.common.value.Duration">120</SessionTimeOut>
+    </IntegrationServer>
+
+    <WebService desc="SET_WEB_SERVICE">
+        <Security desc="SET_WEB_SERVICE_SECURITY">
+            <Authentication desc="SET_WEB_SERVICE_AUTHENTICATION">
+                <Mode desc="SET_WEB_SERVICE_AUTHENTICATION_MODE" o1="Username Token Profile" o2="SAML Token Profile" o3="Cookies" type="javax.swing.JComboBox">Username Token Profile</Mode>
+                <UsernameToken desc="SET_WEB_SERVICE_AUTHENTICATION_MODE_USERNAMETOKEN">
+                    <Nonce desc="SET_WEB_SERVICE_AUTHENTICATION_MODE_USERNAMETOKEN_NONCE">
+                        <NonceEnabled desc="SET_WEB_SERVICE_USERNAME_TOKEN_NONCE_ENABLED" type="java.lang.Boolean">true</NonceEnabled>
+                        <NonceCacheTimeOut desc="SET_WEB_SERVICE_AUTHENTICATION_MODE_USERNAMETOKEN_NONCE_CACHE_TIMEOUT" max="2073600000" min="300000" type="com.primavera.common.value.Duration">600000</NonceCacheTimeOut>
+                    </Nonce>
+                    <Timestamp desc="SET_WEB_SERVICE_AUTHENTICATION_MODE_USERNAMETOKEN_TIMESTAMP">
+                        <UsernameTokenTimestampEnabled desc="SET_WEB_SERVICE_USERNAME_TOKEN_TIMESTAMP_ENABLED" type="java.lang.Boolean">true</UsernameTokenTimestampEnabled>
+                        <TimestampTimeout desc="SET_WEB_SERVICE_AUTHENTICATION_MODE_USERNAMETOKEN_TIMESTAMP_TIMEOUT" max="2073600000" min="300000" type="com.primavera.common.value.Duration">600000</TimestampTimeout>
+                    </Timestamp>
+                </UsernameToken>
+                <SamlToken desc="SET_WEB_SERVICE_AUTHENTICATION_MODE_SAMLTOKEN">
+                    <SamlVersion desc="SET_WEB_SERVICE_AUTHENTICATION_MODE_SAMLTOKEN_VERSION" o1="1.1" o2="2.0" o3="Both" type="javax.swing.JComboBox">1.1</SamlVersion>
+                    <SamlRequireSigned desc="SET_WEB_SERVICE_AUTHENTICATION_MODE_SAMLTOKEN_REQUIRE_SIGNED" type="java.lang.Boolean">true</SamlRequireSigned>
+                    <SamlOneOneToken desc="SET_WEB_SERVICE_AUTHENTICATION_MODE_SAMLTOKEN_ONE_ONE">
+                        <Issuer desc="SET_WEB_SERVICE_AUTHENTICATION_MODE_SAMLTOKEN_ONE_ONE_ISSUER" type="java.lang.String">http://your.saml.issuer.com</Issuer>
+                        <IssueInstantTimeout desc="SET_WEB_SERVICE_AUTHENTICATION_MODE_SAMLTOKEN_ONE_ONE_ISSUE_INSTANT_TIMEOUT" max="2073600000" min="300000" type="com.primavera.common.value.Duration">300000</IssueInstantTimeout>
+                        <AuthenticationInstantTimeout desc="SET_WEB_SERVICE_AUTHENTICATION_MODE_SAMLTOKEN_ONE_ONE_AUTHENTICATION_INSTANT_TIMEOUT" max="2073600000" min="300000" type="com.primavera.common.value.Duration">300000</AuthenticationInstantTimeout>
+                    </SamlOneOneToken>
+                    <SignedSamlToken desc="SET_WEB_SERVICE_AUTHENTICATION_MODE_SAMLTOKEN_SIGNED">
+                        <KeyStoreType desc="SET_WEB_SERVICE_ENCRYPTION_KEYSTORE_TYPE" o1="JKS" type="javax.swing.JComboBox">JKS</KeyStoreType>
+                        <KeyStoreFileName desc="SET_WEB_SERVICE_ENCRYPTION_KEYSTORE_FILE_NAME" type="java.lang.String">c:\keystore\keystore.jks</KeyStoreFileName>
+                        <KeyStorePassword desc="SET_WEB_SERVICE_ENCRYPTION_KEYSTORE_PASSWORD" encrypt="true" type="java.lang.String"/>
+                        <CertificateAlias desc="SET_WEB_SERVICE_ENCRYPTION_CERTIFICATE_ALIAS" type="java.lang.String">alias</CertificateAlias>
+                        <PrivateKeyAlias desc="SET_WEB_SERVICE_ENCRYPTION_KEYSTORE_ALIAS" type="java.lang.String">privatekeyalias</PrivateKeyAlias>
+                		<PrivateKeyPassword desc="SET_WEB_SERVICE_ENCRYPTION_PRIVATE_KEY_PASSWORD" encrypt="true" type="java.lang.String"/>
+                    </SignedSamlToken>
+                </SamlToken>
+            </Authentication>
+            <MessageProtection desc="SET_WEB_SERVICE_MESSAGE_PROTECTION">
+                <RequireWsSecurityTimestamp desc="SET_WEB_SERVICE_SECURITY_REQUIRE_TIMESTAMP" type="java.lang.Boolean">true</RequireWsSecurityTimestamp>
+                <RequireSignedSoapMessage desc="SET_WEB_SERVICE_SECURITY_REQUIRE_SIGNED_MESSAGE" type="java.lang.Boolean">true</RequireSignedSoapMessage>
+                <WebServiceEncryptionEnabled desc="SET_WEB_SERVICE_ENCRYPTION_ENABLED" type="java.lang.Boolean">true</WebServiceEncryptionEnabled>
+                <KeyStoreType desc="SET_WEB_SERVICE_ENCRYPTION_KEYSTORE_TYPE" o1="JKS" type="javax.swing.JComboBox">JKS</KeyStoreType>
+                <KeyStoreFileName desc="SET_WEB_SERVICE_ENCRYPTION_KEYSTORE_FILE_NAME" type="java.lang.String">c:\keystore\keystore.jks</KeyStoreFileName>
+                <KeyStorePassword desc="SET_WEB_SERVICE_ENCRYPTION_KEYSTORE_PASSWORD" encrypt="true" type="java.lang.String"/>
+                <PrivateKeyAlias desc="SET_WEB_SERVICE_ENCRYPTION_KEYSTORE_ALIAS" type="java.lang.String">alias</PrivateKeyAlias>
+                <PrivateKeyPassword desc="SET_WEB_SERVICE_ENCRYPTION_PRIVATE_KEY_PASSWORD" encrypt="true" type="java.lang.String"/>
+                <OutboundEncryptionEnabled desc="SET_WEB_SERVICE_MESSAGE_PROTECTION_OUTBOUND_ENCRYPTION" type="java.lang.Boolean">true</OutboundEncryptionEnabled>
+                <Fusion desc="SET_WEB_SERVICE_FUSION_ENCRYPTION">
+                    <Outbound desc="SET_WEB_SERVICE_ENCRYPTION_OUTBOUND">
+                        <WebServiceEncryptionEnabled desc="SET_WEB_SERVICE_ENCRYPTION_ENABLED" type="java.lang.Boolean">true</WebServiceEncryptionEnabled>
+                        <KeyStoreType desc="SET_WEB_SERVICE_ENCRYPTION_KEYSTORE_TYPE" o1="JKS" type="javax.swing.JComboBox">JKS</KeyStoreType>
+                        <KeyStoreFileName desc="SET_WEB_SERVICE_ENCRYPTION_KEYSTORE_FILE_NAME" type="java.lang.String">c:\keystore\keystore.jks</KeyStoreFileName>
+                        <KeyStorePassword desc="SET_WEB_SERVICE_ENCRYPTION_KEYSTORE_PASSWORD" encrypt="true" type="java.lang.String"/>
+                        <CertificateAlias desc="SET_WEB_SERVICE_ENCRYPTION_CERTIFICATE_ALIAS" type="java.lang.String">alias</CertificateAlias>
+                    </Outbound>
+                </Fusion>
+            </MessageProtection>
+        </Security>
+    </WebService>
+    <TeamMember desc="SET_TM">
+    	<ConnectionPool desc="SET_CONNECTION_POOL">
+    		<InitialConnectionPoolSize desc="SET_CONNECTION_POOL_INITIAL_SIZE" type="java.lang.Integer">10</InitialConnectionPoolSize>
+            <MaxActiveConnections desc="SET_CONNECTION_POOL_MAX_ACTIVE_CONNECTIONS" type="java.lang.Integer">150</MaxActiveConnections>
+            <MaxIdleConnections desc="SET_CONNECTION_POOL_MAX_IDLE_CONNECTIONS" type="java.lang.Integer">-1</MaxIdleConnections>
+            <MinIdleConnections desc="SET_CONNECTION_POOL_MIN_IDLE_CONNECTIONS" type="java.lang.Integer">10</MinIdleConnections>
+    	</ConnectionPool>
+    	<Logging desc="SET_LOGGING">
+    		<Enabled desc="SET_LOG_ENABLED" type="java.lang.Boolean">true</Enabled>
+    		<LogLevel desc="SET_LOGGING_LEVEL" o1="off" o2="fatal" o3="error" o4="warn" o5="info" o6="debug" o7="trace" o8="all" type="javax.swing.JComboBox">error</LogLevel>
+    		<LogFileName desc="SET_LOGGING_FILE_NAME" type="java.lang.String">p6tmweb.log</LogFileName>
+    	</Logging>
+    </TeamMember>
+	
+	<Diagnostics desc="SET_DIAGNOSTICS">
+            <MetricsCollector desc="SET_METRICS">
+                <MetricCollection desc="SET_METRICS_COLLECTOR" type="java.lang.Boolean">true</MetricCollection>
+                <ThresholdLimit desc="SET_THRESHOLD_LIMIT" type="java.lang.Integer">5</ThresholdLimit>
+                <CollectionSize desc="SET_COLLECTION_SIZE" type="java.lang.Integer">100</CollectionSize>
+            </MetricsCollector>
+    </Diagnostics>
+</MyPrimavera>

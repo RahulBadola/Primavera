@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><BootStrap xmlns:xalan="http://xml.apache.org/xslt">
+   <Database>
+      <URL>jdbc:oracle:thin:@EPTS-sigep8-DB1-st.services.eni.intranet:1535/P6V15TST</URL>
+      <UserName>pubuser</UserName>
+      <Password>AE042E5F98151ED7654DFB8DDC7101134F443F5EDAFA172EB74D86AAE9ED7FA8C25BAE04</Password>
+      <Driver>oracle.jdbc.OracleDriver</Driver>
+      <PublicGroupId>1</PublicGroupId>
+   </Database>
+   <CfgVersion>15.200</CfgVersion>
+   <Configurations>
+      <BRE name="P6Test" instances="1" logDir="C:\Program Files\Oracle\Primavera P6\P6 Professional\EPPM\Java\.\PrimaveraLogs"/>
+   </Configurations>
+</BootStrap>

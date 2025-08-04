@@ -1,0 +1,1 @@
+<%@ WebService Language="VB" CodeBehind="PM6DBServiceController.asmx.vb" Class="PM6DBServiceController" %>
